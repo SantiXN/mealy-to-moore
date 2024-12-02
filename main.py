@@ -54,7 +54,7 @@ def moore_to_mealy(moore_filename, output_filename):
         mealy_transitions[input_symbol] = {}
         for state in states:
             mealy_transitions[input_symbol][state] = (transitions[input_symbol][state], outputs[state])
-    print_mealy("output1.csv", mealy_transitions, states, input_symbols)
+    print_mealy(output_filename, mealy_transitions, states, input_symbols)
     return mealy_transitions, states, input_symbols
 
 
