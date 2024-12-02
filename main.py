@@ -181,17 +181,17 @@ def print_moore(output_filename, transitions, outputs, states, input_symbols):
 
 
 def main():
-    # if len(sys.argv) != 4:
-    #     print("Использование:")
-    #     print("Для преобразования из Mealy в Moore:")
-    #     print("    program mealy-to-moore mealy.csv moore.csv")
-    #     print("Для преобразования из Moore в Mealy:")
-    #     print("    program moore-to-mealy moore.csv mealy.csv")
-    #     sys.exit(1)
+    if len(sys.argv) != 4:
+        print("Использование:")
+        print("Для преобразования из Mealy в Moore:")
+        print("    program mealy-to-moore mealy.csv moore.csv")
+        print("Для преобразования из Moore в Mealy:")
+        print("    program moore-to-mealy moore.csv mealy.csv")
+        sys.exit(1)
 
-    command = "mealy-to-moore"
-    input_file = "source_mealy.csv"
-    output_file = "output.csv"
+    command = sys.argv[1]
+    input_file = sys.argv[2]
+    output_file = sys.argv[3]
 
     if command == "mealy-to-moore":
         mealy_to_moore(input_file, output_file)
